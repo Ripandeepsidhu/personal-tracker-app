@@ -8,138 +8,137 @@
 }
 
 body {
-  background: linear-gradient(135deg, #FF5F6D, #FFC371);
+  background: #fff3e6; /* very light orange background */
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  color: #fff;
 }
 
 .App {
   text-align: center;
 }
 
-h3 {
-  font-size: 2.2rem;
-  font-weight: 700;
+h1 {
+  color: #ff6f3c; /* vibrant orange */
   margin-bottom: 1.5rem;
-  color: #fff;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
 }
 
 .TodoWrapper {
-  background: #1E1E2F;
-  padding: 3rem 2.5rem;
+  background: #fffaf0; /* soft cream */
+  margin-top: 2rem;
+  padding: 2.5rem 3rem;
   border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(255, 111, 60, 0.2);
   width: 420px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .TodoWrapper:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255, 111, 60, 0.3);
 }
 
 .TodoForm {
-  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
   margin-bottom: 2rem;
 }
 
 .todo-input {
-  width: 100%;
-  padding: 1rem 1.5rem;
-  margin-bottom: 1.2rem;
-  border: none;
-  border-radius: 15px;
-  font-size: 1.1rem;
-  outline: none;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  transition: background 0.3s, box-shadow 0.3s;
-}
-
-.todo-input::placeholder {
-  color: #ffffff99;
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  border: 2px solid #ffb07a;
+  font-size: 1rem;
+  margin-right: 0.7rem;
+  transition: all 0.3s ease;
+  background: #fff7f0;
 }
 
 .todo-input:focus {
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 15px #FFC371aa;
+  border-color: #ff6f3c;
+  box-shadow: 0 0 8px rgba(255, 111, 60, 0.3);
+  outline: none;
 }
 
 .todo-btn {
-  background: #FF9A8B;
-  background: linear-gradient(90deg, #FF9A8B, #FF6A88);
+  background: linear-gradient(45deg, #ffb27f, #ff6f3c);
   color: #fff;
   border: none;
-  padding: 0.75rem 2rem;
-  border-radius: 15px;
-  font-size: 1.1rem;
-  font-weight: 600;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s, filter 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 111, 60, 0.2);
 }
 
 .todo-btn:hover {
-  transform: translateY(-3px);
-  filter: brightness(1.15);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 111, 60, 0.3);
 }
 
 .Todo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #FF6A88;
-  padding: 0.85rem 1.2rem;
-  border-radius: 15px;
+  background: #fff2e6; /* soft orange card */
+  color: #333;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
   margin-bottom: 1rem;
-  color: #fff;
-  transition: transform 0.2s, background 0.3s;
+  box-shadow: 0 5px 15px rgba(255, 111, 60, 0.1);
+  transition: all 0.3s ease;
 }
 
 .Todo:hover {
   transform: translateX(5px);
-  background: #FF5F6D;
+  box-shadow: 0 8px 20px rgba(255, 111, 60, 0.2);
+}
+
+/* Toggle Complete Styles */
+.completed {
+  text-decoration: line-through;
+  color: #c76b49; /* darker orange */
+  opacity: 0.7;
 }
 
 .incompleted {
-  cursor: pointer;
-  font-weight: 600;
+  color: #ff6f3c;
 }
 
-.completed {
-  color: #FFE6E6;
-  text-decoration: line-through;
+/* Icons */
+.fa-trash, .fa-pen-to-square {
+  margin-left: 0.75rem;
   cursor: pointer;
+  color: #ff9a6f;
+  transition: all 0.3s ease;
 }
 
-.edit-icon,
-.delete-icon,
-.fa-trash {
-  cursor: pointer;
-  margin-left: 0.5rem;
-  transition: transform 0.2s, color 0.2s;
-}
-
-.edit-icon:hover,
-.delete-icon:hover,
-.fa-trash:hover {
-  color: #FFB347;
+.fa-trash:hover, .fa-pen-to-square:hover {
+  color: #ff6f3c;
   transform: scale(1.2);
 }
 
-pre {
-  background: rgba(0, 0, 0, 0.25);
-  padding: 1.2rem;
-  border-radius: 15px;
-  font-size: 1rem;
-  max-height: 300px;
-  overflow-y: auto;
-  margin-top: 1.5rem;
-  color: #fff;
+/* Responsive design */
+@media (max-width: 500px) {
+  .TodoWrapper {
+    width: 90%;
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .todo-input {
+    font-size: 0.95rem;
+  }
+
+  .todo-btn {
+    padding: 0.7rem 1rem;
+  }
 }
